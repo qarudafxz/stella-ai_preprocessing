@@ -1,5 +1,8 @@
 misc
+hemorrhage_cts
 mask
-image
+Patients_CT
 plotted_mask
 pynrrd
+Pytorch-UNet
+volumes
