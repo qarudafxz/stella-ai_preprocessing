@@ -10,10 +10,11 @@ Remain only images with pixel values in the same file path
 
 """
 
-path = r"C:\Users\User\Desktop\HACK4HEALTH\HACKATHON_PRO\train\mask"
+mask_path = r"C:\Users\User\Desktop\HACK4HEALTH\HACKATHON_PRO\train\mask"
+train_path = r"C:\Users\User\Desktop\HACK4HEALTH\HACKATHON_PRO\train\image"
 
 def remove_black_images():
-    for root, dirs, files in os.walk(path):
+    for root, dirs, files in os.walk(train_path):
         for file in files:
             file_path = os.path.join(root, file)
             img = cv2.imread(file_path, cv2.IMREAD_GRAYSCALE)
