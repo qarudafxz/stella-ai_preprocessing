@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-path = r'C:\Users\User\stella-ai_preprocessing\0021061_027.png'
+path = r'C:\Users\User\stella-ai_preprocessing\0019983_011.png'
 
 def polygonize_mask(mask_image):
     # Convert the mask image to binary
@@ -19,22 +19,14 @@ def polygonize_mask(mask_image):
 
     return points_list
 
-# Example usage
 if __name__ == "__main__":
-    # Load segmented mask image
     mask_image = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 
-    # Polygonize the mask image
     points_list = polygonize_mask(mask_image)
 
-    # Print the extracted points    
-    for i, points in enumerate(points_list):
-        print(f"Contour {i+1} points: {points}")
-
-    # plot the points_list using matplotlib
     for points in points_list:
         x, y = zip(*points)
-        plt.plot(x, y)
+        plt.plot(x, y, marker='o', markersize=6, linewidth=2, color='r')
 
-    plt.gca().invert_yaxis()  # Invert y-axis to match image coordinate system
+    plt.gca().invert_yaxis() 
     plt.show()

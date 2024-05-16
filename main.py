@@ -23,5 +23,3 @@ for folder in os.listdir(mask_dir):
         print(result)
 
         plt.imsave(os.path.join(plotted_mask_dir, folder + '_' + image.split('.')[0] + '.png'), cv2.cvtColor(result, cv2.COLOR_BGR2RGB))
-
-    
